@@ -5,9 +5,9 @@ using namespace std;
 
 const int MAX_PEOPLE_PER_ELEVATOR = 10;
 
-class person {
+class Person {
     public:
-        person(int);
+        Person(int);
 
     private: 
         int destination;
@@ -20,9 +20,9 @@ int main () {
 };
 
 // implementation for class person
-person::person (int destination){
+Person::Person (int destination){
     destination = this->destination;
 };
-int person::getDestination () {
+int Person::getDestination () {
     return destination;
 };
