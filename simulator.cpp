@@ -14,6 +14,8 @@ class Person {
     private: 
         int destination;
         int getDestination();
+};
+
 class Elevator {
     public:
         Elevator();
