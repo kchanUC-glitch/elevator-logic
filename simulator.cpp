@@ -1,5 +1,6 @@
 #include <iostream>
-#include <vector>
+#include <set>
+#include <algorithm>
 #include <string>
 
 
@@ -19,14 +20,17 @@ class Elevator {
     public:
         Elevator();
         void addDestination(Person);
+        void removeDestination(Person);
         void display();
+        void setDirection(bool direction);
         int getCurrFloor();
-        vector<int> getDestinations();
+        set<int> getDestinations();
     private:
         int currFloor;
         int currNumPeople;
+        bool isGoingUp;
         string name;
-        vector<int> destinations;  
+        set<int> destinations;   
 };
 
 int main () {
@@ -48,8 +52,19 @@ Person::Person (int destination){
 };
 int Person::getDestination () {
     return destination;
-};
+}
 
 void Elevator::display() {
-    cout <<
+    
+}
+// elevator methods
+void Elevator::addDestination (Person person) {
+    currNumPeople++;
+    destinations.insert(person.getDestination());
+}
+void Elevator::setDirection(bool direction) {
+    isGoingUp = direction;
+}
+void Elevator::removeDestination (Person person) {
+    destinations.erase(person.getDestination());
 }
