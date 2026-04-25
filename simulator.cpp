@@ -10,10 +10,9 @@ const int MAX_PEOPLE_PER_ELEVATOR = 10;
 class Person {
     public:
         Person(int);
-
+        int getDestination();
     private: 
         int destination;
-        int getDestination();
 };
 
 class Elevator {
@@ -25,12 +24,20 @@ class Elevator {
         vector<int> getDestinations();
     private:
         int currFloor;
-        string name;
         int currNumPeople;
-        vector<int> destinations;   
+        string name;
+        vector<int> destinations;  
 };
 
 int main () {
+    Person Konner(9);
+    Person Austin(1);
+
+    Elevator elevator;
+    elevator.addDestination(Konner);
+    elevator.addDestination(Austin);
+
+    elevator.display();
 
     return 0;
 };
@@ -42,3 +49,7 @@ Person::Person (int destination){
 int Person::getDestination () {
     return destination;
 };
+
+void Elevator::display() {
+    cout <<
+}
